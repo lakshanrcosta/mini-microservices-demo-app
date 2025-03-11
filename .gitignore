@@ -1,0 +1,111 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# TypeScript build outputs
+dist/
+out/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS system files
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Ignore built Vite/React output
+client/node_modules/
+client/.next/
+client/.cache/
+client/dist/
+client/build/
+client/.turbo/
+client/.eslintcache/
+client/.parcel-cache/
+client/.swc/
+client/.vite/
+client/.env.local
+
+# Ignore Express build outputs
+posts/node_modules/
+posts/dist/
+posts/build/
+posts/.turbo/
+posts/.eslintcache/
+posts/.parcel-cache/
+
+comments/node_modules/
+comments/dist/
+comments/build/
+comments/.turbo/
+comments/.eslintcache/
+comments/.parcel-cache/
+
+# Docker (if using Docker)
+docker-compose.override.yml
+docker-compose.yml
+.dockerignore
+*.dockerfile
+
+# Firebase, Amplify, or AWS related configs
+.firebase/
+amplify/
+aws-exports.js
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# Jest testing files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+jest.config.js
+jest.config.ts
+coverage/
+
+# Ignore Linting & Formatting cache
+.eslintcache
+.prettiercache
+
+# Ignore Husky hooks if not committed
+.husky/_/
+
+# Ignore Storybook output
+storybook-static/
+out/
+
+# Ignore Prisma files (if using)
+prisma/.env
+prisma/migrations/
+
+# Ignore GraphQL codegen
+graphql.schema.json
+.graphqlrc
+
+# Ignore temporary files
+*.tmp
+*.bak
