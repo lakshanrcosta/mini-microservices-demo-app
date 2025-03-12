@@ -5,7 +5,7 @@ import { Post } from '../types/posts';
 const posts: { [key: string]: Post } = {};
 
 export const healthCheck = (req: Request, res: Response) => {
-  res.status(200).send('OK');
+  res.status(200).send('Posts OK!');
 };
 
 export const createPost = (req: Request, res: Response) => {
