@@ -1,0 +1,37 @@
+.comment-form {
+    margin-top: 10px;
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  
+  .input-group .form-control {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 0;
+  }
+  
+  .input-group .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

@@ -3,7 +3,11 @@ import './posts-form.component.css';
 import { createPost } from '../../api/posts-service/api-posts';
 import { PostDto } from '../../types/post-types/post-dto-types';
 
-const PostForm: React.FC = () => {
+interface PostFormProps {
+  onPostSubmit: (newPost: boolean) => void;
+}
+
+const PostForm: React.FC<PostFormProps> = ({ onPostSubmit }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [errors, setErrors] = useState<{ title?: string; content?: string }>({});
@@ -41,6 +45,7 @@ const PostForm: React.FC = () => {
       const response = await createPost(postDto);
       const data = response.data;
       console.log('Post Submitted:', data);
+      onPostSubmit(true);
     } catch (error) {
       console.error('Error submitting post:', error);
       alert('Error submitting post. Please try again.');
