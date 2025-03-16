@@ -17,7 +17,6 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
-app.use('api/posts', router);
 
 // Custom middleware
 app.use(loggingMiddleware);
