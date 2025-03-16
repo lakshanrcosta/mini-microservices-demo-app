@@ -3,7 +3,7 @@ import { createCommentEventApiInstance } from './api-config-comments';
 
 const apiCommentEvents = createCommentEventApiInstance();
 
-export const createComment = (event: CommentCreatedEvent) => {
+export const emitCommentEvent = (event: CommentCreatedEvent) => {
   return apiCommentEvents.post('/events', event);
 };
 
