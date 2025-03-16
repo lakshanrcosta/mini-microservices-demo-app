@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 
 export const apiConfig = {
-  BASE_URL: 'http://localhost:3305/api',
+  BASE_URL: 'http://localhost:3305/api/event-broker',
   ENABLE_LOGGING: false
 };
 

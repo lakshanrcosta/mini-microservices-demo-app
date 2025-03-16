@@ -4,6 +4,6 @@ import { healthCheck, receiveEmittedEvent } from '../controllers/eventsControlle
 const router = Router();
 
 router.get('/healthCheck', healthCheck);
-router.post('/events', receiveEmittedEvent);
+router.post('/event-broker/events', receiveEmittedEvent);
 
 export default router;

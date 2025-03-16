@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import { randomBytes } from 'crypto';
-import { Post } from '../types/posts';
+import { Posts } from '../types/posts';
 import { emitPostCreatedEvent } from '../events/postEventsApi';
 
-const posts: { [key: string]: Post } = {};
+const posts: Posts = {};
 
 export const healthCheck = (req: Request, res: Response) => {
   res.status(200).send('Posts OK!');
