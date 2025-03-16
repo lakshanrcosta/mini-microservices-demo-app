@@ -23,7 +23,7 @@ app.use(loggingMiddleware);
 // app.use(authMiddleware);
 
 // Routes
-app.use('/api/comments', router);
+app.use('/api', router);
 
 // Error handling middleware
 app.use(errorMiddleware);
@@ -31,7 +31,7 @@ app.use(errorMiddleware);
 const server = http.createServer(app);
 
 // Start the server
-const port = process.env.PORT || 3300;
+const port = process.env.PORT || 3305;
 server.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

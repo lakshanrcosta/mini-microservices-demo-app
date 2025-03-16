@@ -1,10 +1,16 @@
 import { Router } from 'express';
-import { createPost, getPosts, healthCheck } from '../controllers/postsController';
+import {
+  createPost,
+  getPosts,
+  healthCheck,
+  receiveEmittedEvent
+} from '../controllers/postsController';
 
 const router = Router();
 
-router.get('/healthCheck', healthCheck);
-router.post('/createPost', createPost);
-router.get('/getPosts', getPosts);
+router.get('/posts/healthCheck', healthCheck);
+router.post('/posts/createPost', createPost);
+router.get('/posts/getPosts', getPosts);
+router.post('/posts/events', receiveEmittedEvent);
 
 export default router;

@@ -17,14 +17,13 @@ app.use(helmet());
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
-app.use('api/posts', router);
 
 // Custom middleware
 app.use(loggingMiddleware);
 // app.use(authMiddleware);
 
 // Routes
-app.use('/api/posts', router);
+app.use('/api', router);
 
 // Error handling middleware
 app.use(errorMiddleware);
