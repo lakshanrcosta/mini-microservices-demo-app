@@ -3,6 +3,7 @@ import { Comment } from './comments';
 export interface Post {
   id: string;
   title: string;
+  content: string;
   comments: Comment[];
 }
 export interface Posts {
