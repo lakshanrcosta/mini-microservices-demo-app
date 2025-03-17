@@ -33,8 +33,6 @@ const PostList: React.FC<PostListProps> = ({ onNewPost, resetNewPost }) => {
     fetchPosts();
   }, [onNewPost, isNewComment, resetNewPost]);
 
-  console.log(posts);
-
   return (
     <div className="post-list-container">
       <h2 className="post-list-title">Recent Posts</h2>
