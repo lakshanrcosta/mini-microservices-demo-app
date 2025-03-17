@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Posts } from '../../types/post-types/post-types';
-import { getPosts } from '../../api/posts-service/api-posts';
 import './post-list.component.css';
 import CommentForm from '../comments-form-component/comments-form.component';
 import CommentList from '../comments-list-component/comments-list.component';
+import { getPosts } from '../../api/query-service/api-query-service';
+import { Posts } from '../../types/post-types/post-comment-types';
 
 interface PostListProps {
   onNewPost: boolean;
+  resetNewPost: () => void;
 }
 
-const PostList: React.FC<PostListProps> = ({ onNewPost }) => {
+const PostList: React.FC<PostListProps> = ({ onNewPost, resetNewPost }) => {
   const [posts, setPosts] = useState<Posts>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -24,11 +25,15 @@ const PostList: React.FC<PostListProps> = ({ onNewPost }) => {
         setError(`Failed to load posts. : ${err}`);
       } finally {
         setLoading(false);
+        setIsNewComment(false);
+        resetNewPost();
       }
     };
 
     fetchPosts();
-  }, [onNewPost]);
+  }, [onNewPost, isNewComment, resetNewPost]);
+
+  console.log(posts);
 
   return (
     <div className="post-list-container">
@@ -46,7 +51,7 @@ const PostList: React.FC<PostListProps> = ({ onNewPost }) => {
                 <div className="card-body">
                   <h5 className="card-title">{post.title}</h5>
                   <p className="card-text">{post.content}</p>
-                  <CommentList postId={post.id} onNewComment={isNewComment} />
+                  <CommentList comments={post.comments} />
                   <CommentForm postId={post.id} onCommentSubmit={setIsNewComment} />
                 </div>
               </div>
