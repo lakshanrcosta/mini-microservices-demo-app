@@ -3,7 +3,3 @@ export interface Comment {
   postId: string;
   content: string;
 }
-
-export interface Comments {
-  [key: string]: Comment[];
-}
