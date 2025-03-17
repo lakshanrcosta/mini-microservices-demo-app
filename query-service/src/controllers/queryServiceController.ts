@@ -11,7 +11,7 @@ export const createdEvents = (req: Request, res: Response) => {
   const { type, data } = req.body as PostCreatedEventDto | CommentCreatedEventDto;
 
   if (type === 'PostCreated') {
-    posts[data.id] = { id: data.id, title: data.title, comments: [] };
+    posts[data.id] = { id: data.id, title: data.title, content: data.content, comments: [] };
     res.status(200).send('Post created event received!');
   }
 
